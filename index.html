@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en" ng-app>
+  <head>
+    <title>weUI bottom tabbar example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/weui.css" rel="stylesheet">
+    <!--
+        You have to set documrnt default style with html and body's height(100%).
+        If you want to match weUI example, you should include the weui-example.css file.
+    -->
+    <link href="./css/weui-example.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- root element -->
+    <div id="app" class="container">
+      <div class="tabbar">
+        <!-- content area -->
+        <div class="weui_tab_bd">
+            <!--
+                You can insert any element or text in block
+            -->
+			<p>Content area....<p>
+        </div>
+        <!-- WeUI tabbar area -->
+        <div id="tabbar" class="weui_tabbar">
+          <a href="#TestA"
+             class="weui_tabbar_item">
+            <div class="weui_tabbar_icon">
+              <img src="http://weui.io/images/icon_nav_button.png" alt="">
+            </div>
+            <p class="weui_tabbar_label">TestA</p>
+          </a>
+          <a href="#TestB"
+             class="weui_tabbar_item">
+            <div class="weui_tabbar_icon">
+              <img src="http://weui.io/images/icon_nav_msg.png" alt="">
+            </div>
+            <p class="weui_tabbar_label">TestB</p>
+          </a>
+          <a href="#TestC"
+             class="weui_tabbar_item">
+            <div class="weui_tabbar_icon">
+              <img src="http://weui.io/images/icon_nav_article.png" alt="">
+            </div>
+            <p class="weui_tabbar_label">TestC</p>
+          </a>
+          <a href="#TestD"
+             class="weui_tabbar_item">
+            <div class="weui_tabbar_icon">
+              <img src="http://weui.github.io/weui/images/icon_nav_button.png" alt="">
+            </div>
+            <p class="weui_tabbar_label">TestD</p>
+          </a>
+          <a href="#TestE"
+             class="weui_tabbar_item">
+            <div class="weui_tabbar_icon">
+              <img src="http://weui.github.io/weui/images/icon_nav_msg.png" alt="">
+            </div>
+            <p class="weui_tabbar_label">TestE</p>
+          </a>
+      </div>
+    </div>
+    <!-- Include jquery from googleapis -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+    //Use jquery function to set 'onclick' event with all 'a' element.
+    //Jquery's 'on' function reference 'http://api.jquery.com/on/'
+    $('#tabbar').on('click', '.weui_tabbar_item', function () {
+        //Set event function with all element.
+        $(this).addClass('weui_bar_item_on').
+            siblings('.weui_bar_item_on').
+                removeClass('weui_bar_item_on');
+    });
+    </script>
+  </body>
+</html>
